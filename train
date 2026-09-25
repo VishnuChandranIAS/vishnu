@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forty Eight shades of Brown : Tokyo Fashion</title>
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #F5FBFF;
+    color: #243B53;
+
+    font-family: "DM Sans", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   TOP / BACK
+========================================================= */
+
+.top {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 30px 7vw 0;
+}
+
+.back {
+    color: #627D98;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+
+    transition: all 0.25s ease;
+}
+
+.back:hover {
+    color: #90D5FF;
+}
+
+
+/* =========================================================
+   ARTICLE HEADER
+========================================================= */
+
+.article-header {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 95px auto 90px;
+
+    padding: 0 7vw;
+}
+
+.label {
+    margin-bottom: 25px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.20em;
+
+    text-transform: uppercase;
+
+    color: #3AA7E8;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+h1 {
+    margin: 0;
+
+    max-width: 1300px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(4rem, 8vw, 8.5rem);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    color: #102A43;
+}
+
+
+/* =========================================================
+   ARTICLE CONTAINER
+========================================================= */
+
+.article {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto 130px;
+
+    padding: 0 7vw;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.article-image {
+    float: right;
+
+    width: 46%;
+
+    margin: 0 0 40px 65px;
+
+    position: relative;
+}
+
+.article-image img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 18px 45px rgba(16, 42, 67, 0.10);
+
+    background: #E8F7FE;
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+========================================================= */
+
+.article-image::after {
+    content: "TOKYO · FIELD NOTE";
+
+    display: block;
+
+    margin-top: 13px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.18em;
+
+    color: #7B9AB0;
+}
+
+
+/* =========================================================
+   ARTICLE TEXT
+========================================================= */
+
+.article p {
+    margin: 0 0 35px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    color: #243B53;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+.opening {
+    margin-bottom: 62px;
+}
+
+.opening p {
+    margin: 0 0 35px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #243B53;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   OPENING — FIRST LINE
+========================================================= */
+
+.opening p:first-child {
+    margin-bottom: 28px;
+
+    color: #102A43;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SPECIAL SHORT LINES
+========================================================= */
+
+.short-line {
+    margin-bottom: 18px !important;
+
+    color: #193B56 !important;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   EMPHASIS
+========================================================= */
+
+.emphasis {
+    color: #102A43 !important;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   FINAL PARAGRAPH
+========================================================= */
+
+.final {
+    margin-top: 60px !important;
+
+    color: #102A43 !important;
+
+    font-weight: 500;
+
+    font-size: 19px !important;
+}
+
+
+/* =========================================================
+   CLEAR FLOAT
+========================================================= */
+
+.article::after {
+    content: "";
+
+    display: table;
+
+    clear: both;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    border-top: 1px solid #D5ECF8;
+
+    text-align: center;
+
+    padding: 35px 20px 45px;
+
+    background: #EDF8FD;
+
+    color: #78909C;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .top {
+        padding: 25px 5vw 0;
+    }
+
+
+    .article-header {
+        padding: 0 5vw;
+
+        margin: 75px auto 65px;
+    }
+
+
+    .article {
+        padding: 0 5vw;
+
+        margin-bottom: 100px;
+    }
+
+
+    h1 {
+        font-size: clamp(3.5rem, 10vw, 6.5rem);
+
+        line-height: 1;
+    }
+
+
+    /* Image becomes full width */
+
+    .article-image {
+        float: none;
+
+        width: 100%;
+
+        margin: 0 0 48px;
+    }
+
+
+    .article p,
+    .opening p {
+        font-size: 17px;
+
+        line-height: 1.85;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .top {
+        padding: 22px 20px 0;
+    }
+
+
+    .article-header {
+        padding: 0 20px;
+
+        margin: 65px auto 50px;
+    }
+
+
+    .article {
+        padding: 0 20px;
+
+        margin-bottom: 75px;
+    }
+
+
+    .label {
+        font-size: 10px;
+
+        letter-spacing: 0.16em;
+
+        margin-bottom: 20px;
+    }
+
+
+    h1 {
+        font-size: 3.25rem;
+
+        line-height: 1.02;
+
+        letter-spacing: -0.045em;
+    }
+
+
+    .article-image {
+        width: 100%;
+
+        margin: 0 0 38px;
+    }
+
+
+    .article p,
+    .opening p {
+        font-size: 16.5px;
+
+        line-height: 1.85;
+
+        text-align: left;
+    }
+
+
+    .opening {
+        margin-bottom: 48px;
+    }
+
+
+    .opening p:first-child {
+        margin-bottom: 24px;
+    }
+
+
+    .final {
+        margin-top: 45px !important;
+
+        font-size: 17px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     BACK
+======================================================= -->
+
+<div class="top">
+
+    <a href="./index.html" class="back">
+        ← Back
+    </a>
+
+</div>
+
+
+<!-- =======================================================
+     ARTICLE HEADER
+======================================================= -->
+
+<header class="article-header">
+
+    <div class="label">
+        FIELD NOTE · TOKYO
+    </div>
+
+    <h1>
+        Forty Eight shades of Brown : Tokyo Fashion
+    </h1>
+
+</header>
+
+
+<!-- =======================================================
+     ARTICLE
+======================================================= -->
+
+<main class="article">
+
+
+    <!-- ===================================================
+         PHOTO
+         Image name is train.JPG
+    ==================================================== -->
+
+    <div class="article-image">
+
+        <img
+            src="./train.JPG"
+            alt="Tokyo Train Fashion"
+            loading="eager"
+        >
+
+    </div>
+
+
+    <!-- ===================================================
+         OPENING
+    ==================================================== -->
+
+    <div class="opening">
+
+        <p>
+            Japanese sense of colour is very unique and stylish. I still remember when I first entered the train from Shiodome to Roppongi.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================
+         ARTICLE BODY
+    ==================================================== -->
+
+    <p>
+        Everyone, I mean every single person, inside the cabin was wearing black and white/light grey colour, while I was wearing a yellow t-shirt with off-green sneakers.
+    </p>
+
+
+    <p class="short-line">
+        Damn !!, I should have taken a snap of those who glared at me.
+    </p>
+
+    <p class="short-line">
+        I felt really like an alien — not the gaijin kind.
+    </p>
+
+    <p class="short-line">
+        No wonder they see us differently.
+    </p>
+
+
+    <p>
+        Japanese people in Tokyo mostly wear similarly colored clothes — black, white, light pink, and at most dark blue — and you can sense the change in season just by looking at their dress colors.
+    </p>
+
+
+    <p>
+        The shift toward light pink starts just a few hours before the sakura actually blooms. They even know the exact day it will bloom.
+    </p>
+
+
+    <p>
+        Turns out this isn’t some random minimalist trend — it goes back to centuries , to actual laws.
+    </p>
+
+
+    <p>
+        During the Edo period, the shogunate banned commoners and merchants from wearing bright colors, gold, or fine silk, restricting them to browns, greys and navy.
+    </p>
+
+
+    <p>
+        People converted this restriction into an art form of near varieties with the colors, <span class="emphasis">“iki”</span> — a wholesome aesthetic built around subtle, restrained elegance.They got so good at working withing grey and brown that they invented <span class="emphasis">“shijūhatcha hyakunezumi"</span> — forty-eight browns and a hundred greys — an entire private vocabulary of near-invisible color differences.
+    </p>
+
+
+    <p>
+        There is a warm grace in this trend. No one actually cares about the cost of the clothes they wear. No one is really concerned about trends or the changes fashion goes through. The brand, the pattern, and the style mostly match.
+    </p>
+
+
+    <p>
+        Work and efficiency are what get noticed, not the age-old game of who wears what. Yes, there are places like Shinjuku where world fashion trends are born, but that isn't the norm.
+    </p>
+
+
+    <p class="final">
+        I got so interested in this dressing pattern that I now wear only white t-shirts, mostly. Who needs to worry about trends and color shades anymore?
+    </p>
+
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    Vishnu Chandran
+
+</footer>
+
+
+</body>
+
+</html>
