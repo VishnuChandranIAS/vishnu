@@ -1,3068 +1,1071 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Vishnu Chandran — civil servant, public policy practitioner, student of governance, cities, skills, data and society. Field notes, essays, research and reflections.">
-
 <meta name="author" content="Vishnu Chandran">
-
 <meta name="theme-color" content="#102A3A">
-
 <title>Vishnu Chandran — Field Notes on Society, Governance & the Examined Life</title>
-
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
-
-  --ink:#102A3A;
-  --ink-2:#16384A;
-
-  --paper:#f4f0e8;
-  --paper-2:#e9e3d8;
-
-  --text:#1a1d1f;
-  --muted:#6b6d6a;
-
+  --ink:#102A3A;--ink-2:#16384A;
+  --paper:#f4f0e8;--paper-2:#e9e3d8;
+  --text:#1a1d1f;--muted:#6b6d6a;
   --line:rgba(26,29,31,.14);
-
   --white:#faf9f5;
-
-  --accent:#90D5FF;
-  --accent-dark:#4EA9D8;
-
-  --max:1240px;
-
-  --radius:22px;
-
+  --accent:#90D5FF;--accent-dark:#4EA9D8;
+  --max:1240px;--radius:22px;
   --shadow:0 18px 60px rgba(0,0,0,.13);
-
-}
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-
-  margin:0;
-
-  background:var(--paper);
-
-  color:var(--text);
-
-  font-family:"DM Sans",system-ui,sans-serif;
-
-  line-height:1.65;
-
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-button{
-  font:inherit;
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.nav{
-
-  position:fixed;
-
-  top:0;
-  left:0;
-  right:0;
-
-  z-index:50;
-
-  background:rgba(16,42,58,.94);
-
-  backdrop-filter:blur(18px);
-
-  border-bottom:1px solid rgba(255,255,255,.12);
-
-}
-
-.nav-inner{
-
-  max-width:var(--max);
-
-  margin:auto;
-
-  padding:14px 28px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-}
-
-.logo{
-
-  color:var(--white);
-
-  font-weight:700;
-
-  letter-spacing:-.02em;
-
-}
-
-.logo span{
-  color:var(--accent);
-}
-
-.nav-links{
-
-  display:flex;
-
-  gap:22px;
-
-  align-items:center;
-
-}
-
-.nav-links a{
-
-  color:#d3e3eb;
-
-  font-size:.83rem;
-
-  letter-spacing:.03em;
-
-  transition:.2s ease;
-
-}
-
-.nav-links a:hover{
-  color:var(--accent);
-}
-
-.nav-cta{
-
-  padding:8px 13px;
-
-  border:1px solid rgba(144,213,255,.55);
-
-  border-radius:999px;
-
-  color:var(--accent)!important;
-
-}
-
-.menu{
-
-  display:none;
-
-  color:#fff;
-
-  background:none;
-
-  border:0;
-
-  font-size:1.4rem;
-
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-
-  min-height:100vh;
-
-  background:var(--ink);
-
-  color:#fff;
-
-  position:relative;
-
-  overflow:hidden;
-
-  display:flex;
-
-  align-items:center;
-
-}
-
-.hero:before{
-
-  content:"";
-
-  position:absolute;
-
-  width:620px;
-
-  height:620px;
-
-  border:1px solid rgba(144,213,255,.28);
-
-  border-radius:50%;
-
-  right:-180px;
-
-  top:-160px;
-
-}
-
-.hero:after{
-
-  content:"";
-
-  position:absolute;
-
-  width:360px;
-
-  height:360px;
-
-  border:1px solid rgba(144,213,255,.16);
-
-  border-radius:50%;
-
-  right:40px;
-
-  top:70px;
-
-}
-
-.hero-grid{
-
-  max-width:var(--max);
-
-  width:100%;
-
-  margin:auto;
-
-  padding:140px 28px 80px;
-
-  display:grid;
-
-  grid-template-columns:1.25fr .75fr;
-
-  gap:80px;
-
-  align-items:end;
-
-  position:relative;
-
-  z-index:2;
-
-}
-
-.eyebrow{
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.73rem;
-
-  letter-spacing:.13em;
-
-  text-transform:uppercase;
-
-  color:#b9d0dc;
-
-  margin-bottom:25px;
-
-}
-
-.hero h1{
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-weight:600;
-
-  font-size:clamp(4rem,9vw,8.5rem);
-
-  line-height:.88;
-
-  letter-spacing:-.055em;
-
-  margin:0 0 34px;
-
-  max-width:900px;
-
-}
-
-.hero h1 em{
-
-  font-style:normal;
-
-  color:var(--accent);
-
-}
-
-.hero-deck{
-
-  font-size:clamp(1.05rem,1.6vw,1.35rem);
-
-  color:#c7d7df;
-
-  max-width:680px;
-
-  margin:0 0 36px;
-
-}
-
-.hero-actions{
-
-  display:flex;
-
-  gap:12px;
-
-  flex-wrap:wrap;
-
-}
-
-.btn{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:8px;
-
-  padding:12px 18px;
-
-  border-radius:999px;
-
-  font-size:.88rem;
-
-  font-weight:600;
-
-  border:1px solid rgba(255,255,255,.22);
-
-  color:#fff;
-
-  transition:.2s ease;
-
-}
-
-.btn:hover{
-
-  transform:translateY(-2px);
-
-}
-
-.btn.primary{
-
-  background:var(--accent);
-
-  border-color:var(--accent);
-
-  color:#102A3A;
-
-}
-
-.btn.light{
-
-  background:#fff;
-
-  color:var(--ink);
-
-  border-color:#fff;
-
-}
-
-.hero-side{
-
-  padding-bottom:10px;
-
-}
-
-.identity-card{
-
-  border:1px solid rgba(144,213,255,.18);
-
-  background:rgba(255,255,255,.055);
-
-  border-radius:var(--radius);
-
-  padding:25px;
-
-  backdrop-filter:blur(12px);
-
-}
-
-.identity-card .big{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:2rem;
-
-  line-height:1.15;
-
-  margin-bottom:12px;
-
-}
-
-.identity-card p{
-
-  color:#b9cbd4;
-
-  margin:0 0 20px;
-
-}
-
-.meta-row{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:14px;
-
-  padding-top:17px;
-
-  border-top:1px solid rgba(255,255,255,.1);
-
-}
-
-.meta-row strong{
-
-  display:block;
-
-  color:#fff;
-
-  font-size:.92rem;
-
-}
-
-.meta-row span{
-
-  display:block;
-
-  color:#91a6b0;
-
-  font-size:.75rem;
-
-}
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section{
-
-  padding:115px 28px;
-
-}
-
-.container{
-
-  max-width:var(--max);
-
-  margin:auto;
-
-}
-
-.section-head{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:30px;
-
-  align-items:end;
-
-  margin-bottom:52px;
-
-}
-
-.kicker{
-
-  font-family:"DM Mono",monospace;
-
-  color:var(--accent-dark);
-
-  font-size:.72rem;
-
-  text-transform:uppercase;
-
-  letter-spacing:.13em;
-
-}
-
-.section h2{
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-size:clamp(2.7rem,5vw,5rem);
-
-  line-height:.98;
-
-  letter-spacing:-.04em;
-
-  margin:10px 0 0;
-
-}
-
-.section-head p{
-
-  max-width:420px;
-
-  color:var(--muted);
-
-  margin:0;
-
-}
-
-/* =========================================================
-   INTRO
-========================================================= */
-
-.intro{
-  background:var(--paper);
-}
-
-.intro-grid{
-
-  display:grid;
-
-  grid-template-columns:.7fr 1.3fr;
-
-  gap:80px;
-
-}
-
-.quote{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:2.15rem;
-
-  line-height:1.22;
-
-  border-left:3px solid var(--accent-dark);
-
-  padding-left:24px;
-
-  margin:0;
-
-}
-
-.prose{
-
-  font-size:1.06rem;
-
-  color:#3e4140;
-
-}
-
-.prose p{
-
-  margin-top:0;
-
-  margin-bottom:20px;
-
-}
-
-/* =========================================================
-   DARK SECTIONS
-========================================================= */
-
-.dark{
-
-  background:var(--ink);
-
-  color:#fff;
-
-}
-
-.dark .section-head p{
-  color:#a9bdc7;
-}
-
-.dark .kicker{
-  color:var(--accent);
-}
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.cards{
-
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  gap:16px;
-
-}
-
-.card{
-
-  background:#fff;
-
-  border:1px solid var(--line);
-
-  border-radius:var(--radius);
-
-  padding:25px;
-
-  min-height:250px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  transition:transform .25s ease,box-shadow .25s ease;
-
-}
-
-.card:hover{
-
-  transform:translateY(-5px);
-
-  box-shadow:var(--shadow);
-
-}
-
-.dark .card{
-
-  background:var(--ink-2);
-
-  border-color:rgba(144,213,255,.12);
-
-}
-
-.card-num{
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.7rem;
-
-  color:var(--accent);
-
-}
-
-.card h3{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:1.65rem;
-
-  line-height:1.05;
-
-  margin:55px 0 12px;
-
-}
-
-.card p{
-
-  color:var(--muted);
-
-  font-size:.92rem;
-
-}
-
-.dark .card p{
-  color:#9db0b9;
-}
-
-.arrow{
-
-  position:absolute;
-
-  right:22px;
-
-  bottom:20px;
-
-  font-size:1.2rem;
-
-  color:var(--accent);
-
-}
-
-/* =========================================================
-   FIELD NOTES + RESEARCH SIDEBAR
-========================================================= */
-
-.field-notes{
-
-  background:var(--paper);
-
-  overflow:hidden;
-
-}
-
-.field-notes .section-head{
-
-  margin-bottom:38px;
-
-}
-
-/* Two-column layout for Notes + Research */
-
-.notes-layout{
-
-  display:grid;
-
-  grid-template-columns:1.5fr 1fr;
-
-  gap:40px;
-
-  align-items:start;
-
-}
-
-/* LEFT COLUMN — Horizontal scroll */
-
-.notes-scroll-wrap{
-
-  position:relative;
-
-  min-width:0; /* prevent overflow */
-
-}
-
-.notes-scroll{
-
-  display:flex;
-
-  gap:20px;
-
-  overflow-x:auto;
-
-  overflow-y:hidden;
-
-  padding:8px 4px 28px;
-
-  scroll-snap-type:x mandatory;
-
-  scrollbar-width:thin;
-
-  scrollbar-color:#9dbbc8 transparent;
-
-  -webkit-overflow-scrolling:touch;
-
-}
-
-.notes-scroll::-webkit-scrollbar{
-
-  height:7px;
-
-}
-
-.notes-scroll::-webkit-scrollbar-track{
-
-  background:transparent;
-
-}
-
-.notes-scroll::-webkit-scrollbar-thumb{
-
-  background:#a8c2ce;
-
-  border-radius:20px;
-
-}
-
-/* individual article card */
-
-.note-card{
-
-  flex:0 0 390px;
-
-  height:500px;
-
-  border-radius:var(--radius);
-
-  overflow:hidden;
-
-  position:relative;
-
-  scroll-snap-align:start;
-
-  background:#102A3A;
-
-  box-shadow:var(--shadow);
-
-  transition:
-
-    transform .3s ease,
-
-    box-shadow .3s ease;
-
-}
-
-.note-card:hover{
-
-  transform:translateY(-6px);
-
-  box-shadow:0 25px 70px rgba(0,0,0,.20);
-
-}
-
-.note-card-image{
-
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  transition:transform .5s ease;
-
-}
-
-.note-card:hover .note-card-image{
-
-  transform:scale(1.04);
-
-}
-
-.note-card::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-
-    linear-gradient(
-
-      180deg,
-
-      rgba(7,22,32,.02) 0%,
-
-      rgba(7,22,32,.10) 32%,
-
-      rgba(7,22,32,.60) 65%,
-
-      rgba(7,22,32,.95) 100%
-
-    );
-
-}
-
-.note-card-content{
-
-  position:absolute;
-
-  left:28px;
-
-  right:28px;
-
-  bottom:27px;
-
-  z-index:2;
-
-  color:#fff;
-
-}
-
-.note-card-tag{
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.66rem;
-
-  letter-spacing:.12em;
-
-  text-transform:uppercase;
-
-  color:var(--accent);
-
-  margin-bottom:10px;
-
-}
-
-.note-card h3{
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-size:2.35rem;
-
-  line-height:1.02;
-
-  margin:0 0 13px;
-
-  letter-spacing:-.025em;
-
-}
-
-.note-card p{
-
-  color:#d8e4e9;
-
-  font-size:.91rem;
-
-  line-height:1.55;
-
-  margin:0 0 18px;
-
-  max-width:330px;
-
-}
-
-.note-card-link{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  color:#fff;
-
-  font-size:.8rem;
-
-  font-weight:600;
-
-  border-bottom:1px solid rgba(255,255,255,.55);
-
-  padding-bottom:3px;
-
-}
-
-/* small newest marker */
-
-.note-card.new::before{
-
-  content:"NEW";
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  z-index:5;
-
-  padding:6px 9px;
-
-  border-radius:999px;
-
-  background:var(--accent);
-
-  color:var(--ink);
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.62rem;
-
-  font-weight:500;
-
-  letter-spacing:.08em;
-
-}
-
-/* =========================================================
-   RIGHT COLUMN — RESEARCH HIGHLIGHT
-========================================================= */
-
-.research-sidebar{
-
-  background:var(--ink-2);
-
-  border:1px solid rgba(144,213,255,.12);
-
-  border-radius:var(--radius);
-
-  padding:32px 28px;
-
-  color:#fff;
-
-  display:flex;
-
-  flex-direction:column;
-
-}
-
-.research-sidebar .kicker{
-
-  color:var(--accent);
-
-  margin-bottom:12px;
-
-  font-size:.7rem;
-
-}
-
-.research-sidebar h3{
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-size:2.1rem;
-
-  line-height:1.08;
-
-  letter-spacing:-.025em;
-
-  margin:0 0 16px;
-
-}
-
-.research-sidebar h3 a{
-
-  color:#fff;
-
-  text-decoration:none;
-
-}
-
-.research-sidebar h3 a:hover{
-
-  color:var(--accent);
-
-}
-
-.research-sidebar p{
-
-  color:#b9cbd4;
-
-  font-size:.95rem;
-
-  line-height:1.7;
-
-  margin:0 0 25px;
-
-}
-
-.research-sidebar .note-card-link{
-
-  color:var(--accent);
-
-  border-bottom-color:var(--accent);
-
-  font-size:.85rem;
-
-  align-self:flex-start;
-
-}
-
-.research-meta{
-
-  margin-top:auto;
-
-  padding-top:24px;
-
-  border-top:1px solid rgba(255,255,255,.08);
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.65rem;
-
-  letter-spacing:.08em;
-
-  color:#8ba3ae;
-
-}
-
-/* =========================================================
-   TIMELINE
-========================================================= */
-
-.timeline{
-
-  position:relative;
-
-  border-left:1px solid rgba(144,213,255,.25);
-
-  margin-left:10px;
-
-}
-
-.timeline-item{
-
-  position:relative;
-
-  padding:0 0 48px 40px;
-
-  display:grid;
-
-  grid-template-columns:110px 1fr;
-
-  gap:30px;
-
-}
-
-.timeline-item:before{
-
-  content:"";
-
-  position:absolute;
-
-  left:-5px;
-
-  top:7px;
-
-  width:9px;
-
-  height:9px;
-
-  border-radius:50%;
-
-  background:var(--accent);
-
-  box-shadow:0 0 0 5px var(--ink);
-
-}
-
-.year{
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.75rem;
-
-  color:var(--accent);
-
-}
-
-.timeline h3{
-
-  margin:0;
-
-  font-family:"Playfair Display",serif;
-
-  font-size:1.55rem;
-
-}
-
-.timeline p{
-
-  margin:5px 0 0;
-
-  color:#9db0b9;
-
-}
-
-/* =========================================================
-   NUMBERS
-========================================================= */
-
-.numbers{
-
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  gap:1px;
-
-  background:rgba(144,213,255,.14);
-
-  border:1px solid rgba(144,213,255,.14);
-
-}
-
-.number{
-
-  padding:35px 28px;
-
-  background:var(--ink-2);
-
-  min-height:170px;
-
-}
-
-.number strong{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:3.2rem;
-
-  display:block;
-
-  color:#fff;
-
-}
-
-.number span{
-
-  color:#9db0b9;
-
-  font-size:.82rem;
-
-}
-
-/* =========================================================
-   RESEARCH NOTES
-========================================================= */
-
-.notes-grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:18px;
-
-}
-
-.note{
-
-  background:#fff;
-
-  border:1px solid var(--line);
-
-  border-radius:var(--radius);
-
-  padding:30px;
-
-  min-height:310px;
-
-  display:flex;
-
-  flex-direction:column;
-
-}
-
-.note .tag{
-
-  font-family:"DM Mono",monospace;
-
-  color:var(--accent-dark);
-
-  font-size:.68rem;
-
-  text-transform:uppercase;
-
-}
-
-.note h3{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:1.9rem;
-
-  line-height:1.08;
-
-  margin:30px 0 12px;
-
-}
-
-.note p{
-
-  color:var(--muted);
-
-  font-size:.92rem;
-
-}
-
-.note-footer{
-
-  margin-top:auto;
-
-  padding-top:22px;
-
-  font-size:.77rem;
-
-  color:#888;
-
-}
-
-/* =========================================================
-   RESEARCH NOTES — DARK VARIANT (FIX FOR VISIBILITY)
-========================================================= */
-
-.dark .note {
-  background: var(--ink-2);
-  border-color: rgba(144,213,255,.12);
-}
-
-.dark .note .tag {
-  color: var(--accent);
-}
-
-.dark .note h3 {
-  color: #fff;
-}
-
-.dark .note p {
-  color: #b9cbd4;
-}
-
-.dark .note-footer {
-  color: #8ba3ae;
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-
-/* =========================================================
-   NOW
-========================================================= */
-
-.now{
-  background:#dcecf3;
-}
-
-.now-grid{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:20px;
-
-}
-
-.now-panel{
-
-  background:rgba(255,255,255,.55);
-
-  border:1px solid rgba(16,42,58,.1);
-
-  border-radius:var(--radius);
-
-  padding:32px;
-
-}
-
-.now-panel h3{
-
-  font-family:"Playfair Display",serif;
-
-  font-size:2rem;
-
-  margin:0 0 15px;
-
-}
-
-.now-panel p{
-  color:#505b60;
-}
-
-.list{
-
-  margin:0;
-
-  padding:0;
-
-  list-style:none;
-
-}
-
-.list li{
-
-  padding:12px 0;
-
-  border-bottom:1px solid rgba(0,0,0,.1);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-}
-
-.list li:last-child{
-  border:0;
-
-}
-
-.list span:last-child{
-
-  color:var(--muted);
-
-  font-family:"DM Mono",monospace;
-
-  font-size:.7rem;
-
-}
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about{
-  background:#fff;
-}
-
-.about-grid{
-
-  display:grid;
-
-  grid-template-columns:.9fr 1.1fr;
-
-  gap:90px;
-
-}
-
-.principles{
-
-  display:grid;
-
-  gap:12px;
-
-}
-
-.principle{
-
-  border-top:1px solid var(--line);
-
-  padding:20px 0;
-
-  display:grid;
-
-  grid-template-columns:55px 1fr;
-
-  gap:20px;
-
-}
-
-.principle b{
-
-  font-family:"DM Mono",monospace;
-
-  color:var(--accent-dark);
-
-  font-size:.72rem;
-
-}
-
-.principle h3{
-
-  margin:0;
-
-  font-size:1.05rem;
-
-}
-
-.principle p{
-
-  margin:4px 0 0;
-
-  color:var(--muted);
-
-  font-size:.9rem;
-
-}
-
-/* =========================================================
-   SOURCES
-========================================================= */
-
-.sources{
-  background:#f8f6f0;
-}
-
-.source-list{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:12px;
-
-}
-
-.source{
-
-  background:#fff;
-
-  border:1px solid var(--line);
-
-  border-radius:15px;
-
-  padding:18px;
-
-}
-
-.source small{
-
-  display:block;
-
-  color:var(--accent-dark);
-
-  font-family:"DM Mono",monospace;
-
-  margin-bottom:5px;
-
-}
-
-.source a{
-
-  text-decoration:underline;
-
-  text-decoration-color:#bbb;
-
-  text-underline-offset:3px;
-
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-
-  background:var(--ink);
-
-  color:#fff;
-
-  text-align:center;
-
-  padding-bottom:140px;
-
-}
-
-.contact h2{
-
-  max-width:850px;
-
-  margin:10px auto 20px;
-
-}
-
-.contact p{
-
-  color:#b4c6cf;
-
-  max-width:600px;
-
-  margin:0 auto 30px;
-
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer{
-
-  background:#0c2230;
-
-  color:#8ea4ae;
-
-  padding:25px 28px;
-
-  font-size:.75rem;
-
-}
-
-.footer-inner{
-
-  max-width:var(--max);
-
-  margin:auto;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-}
-
-.footer a{
-  color:var(--accent);
-}
-
-/* =========================================================
-   ANIMATION
-========================================================= */
-
-.reveal{
-
-  opacity:0;
-
-  transform:translateY(18px);
-
-  transition:opacity .7s ease,transform .7s ease;
-
-}
-
-.reveal.visible{
-
-  opacity:1;
-
-  transform:none;
-
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
+  /* hero theme (driven by JS, day -> night) */
+  --hbg:#dfe8ec;--hfg:#102A3A;--hmut:#46606d;--hmut2:#46606d;--hacc:#1f6f9f;
+  --pbg:#102A3A;--pfg:#ffffff;--cbg:rgba(255,255,255,.5);--cbd:rgba(16,42,58,.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html.locked,html.locked body{overflow:hidden;height:100%;}
+html{-webkit-text-size-adjust:100%;}
+body{overflow-x:clip;-webkit-tap-highlight-color:transparent;margin:0;background:var(--paper);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font:inherit;}
+:focus-visible{outline:2px solid #ffd9a0;outline-offset:3px;}
+/* NAVIGATION */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(16,42,58,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.12);}
+.nav-inner{max-width:var(--max);margin:auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.logo{color:var(--white);font-weight:700;letter-spacing:-.02em;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{color:#d3e3eb;font-size:.83rem;letter-spacing:.03em;transition:.2s ease;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{padding:8px 13px;border:1px solid rgba(144,213,255,.55);border-radius:999px;color:var(--accent)!important;}
+.menu{display:none;color:#fff;background:none;border:0;font-size:1.4rem;}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;pointer-events:none;}
+.hero-grid>*,.card,.note,.principle{will-change:auto;}
+.hero h1 .w{display:inline-block;transform-origin:0 100%;will-change:transform,opacity;}
+.btn:active{transform:scale(.97);}
+.timeline:after{content:"";position:absolute;left:-1.5px;top:0;width:2px;height:100%;background:var(--accent);transform:scaleY(var(--tl,0));transform-origin:top;pointer-events:none;}
+@media(hover:none),(max-width:720px){.note-card{transition:none;transform-origin:50% 60%;}}
+/* HERO */
+.hero{min-height:100vh;min-height:100svh;background:var(--hbg);color:var(--hfg);position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(144,213,255,.28);border-radius:50%;right:-180px;top:-160px;z-index:1;}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(144,213,255,.16);border-radius:50%;right:40px;top:70px;z-index:1;}
+/* photo stage: day + night layers line up pixel for pixel */
+.stage{position:absolute;left:50%;top:50%;width:max(100vw,calc(100vh * 1.791));width:max(100vw,calc(100svh * 1.791));aspect-ratio:1456/813;transform:translate(-50%,-50%);pointer-events:none;z-index:0;will-change:transform;}
+.layer{position:absolute;inset:0;}
+.layer svg,.layer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.layer.night{opacity:0;}
+.veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,var(--hbg) 0%,transparent 70%);opacity:.0;}
+.hero-grid{max-width:var(--max);width:100%;margin:auto;padding:140px 28px 80px;display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:end;position:relative;z-index:2;}
+.eyebrow{font-family:"DM Mono",monospace;font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;color:var(--hmut);margin-bottom:25px;}
+.hero h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:clamp(4rem,9vw,8.5rem);line-height:.88;letter-spacing:-.055em;margin:0 0 34px;max-width:900px;color:var(--hfg);}
+.hero h1 em{font-style:normal;color:var(--hacc);}
+.hero-deck{font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--hmut2);max-width:680px;margin:0 0 36px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-size:.88rem;font-weight:600;border:1px solid rgba(255,255,255,.22);color:#fff;transition:.2s ease;}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);}}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#102A3A;}
+.btn.light{background:#fff;color:var(--ink);border-color:#fff;}
+.hero .btn{color:var(--hfg);border-color:var(--hfg);}
+.hero .btn.primary{background:var(--pbg);border-color:var(--pbg);color:var(--pfg);}
+.hero-side{padding-bottom:10px;}
+.identity-card{border:1px solid var(--cbd);background:var(--cbg);border-radius:var(--radius);padding:25px;backdrop-filter:blur(12px);}
+.identity-card .big{font-family:"Playfair Display",serif;font-size:2rem;line-height:1.15;margin-bottom:12px;color:var(--hfg);}
+.identity-card p{color:var(--hmut2);margin:0 0 20px;}
+.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-top:17px;border-top:1px solid var(--cbd);}
+.meta-row strong{display:block;color:var(--hfg);font-size:.92rem;}
+.meta-row span{display:block;color:var(--hmut);font-size:.75rem;}
+/* day / night toggle */
+.toggle{position:absolute;top:92px;right:var(--padx,28px);z-index:5;display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--hfg);cursor:pointer;font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 4px;min-height:44px;touch-action:manipulation;}
+.switch{position:relative;width:52px;height:28px;border-radius:999px;background:var(--hfg);display:block;}
+.knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;display:block;}
+/* GENERAL SECTIONS */
+.section{padding:115px 28px;}
+.container{max-width:var(--max);margin:auto;}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:52px;}
+.kicker{font-family:"DM Mono",monospace;color:var(--accent-dark);font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;}
+.section h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.7rem,5vw,5rem);line-height:.98;letter-spacing:-.04em;margin:10px 0 0;}
+.section-head p{max-width:420px;color:var(--muted);margin:0;}
+/* INTRO */
+.intro{background:var(--paper);}
+.intro-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;}
+.quote{font-family:"Playfair Display",serif;font-size:2.15rem;line-height:1.22;border-left:3px solid var(--accent-dark);padding-left:24px;margin:0;}
+.prose{font-size:1.06rem;color:#3e4140;}
+.prose p{margin-top:0;margin-bottom:20px;}
+/* DARK SECTIONS */
+.dark{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
+.dark .container{position:relative;z-index:2;}
+.dark .section-head p{color:#a9bdc7;}
+.dark .kicker{color:var(--accent);}
+/* subtle photo backdrops behind dark sections */
+.backdrop{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.14;}
+.backdrop svg,.backdrop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,transparent 30%,transparent 70%,var(--ink) 100%);}
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;min-height:250px;position:relative;overflow:hidden;box-shadow:none;}
+@media(hover:hover){.card:hover{box-shadow:var(--shadow);}}
+.dark .card{background:var(--ink-2);border-color:rgba(144,213,255,.12);}
+.card-num{font-family:"DM Mono",monospace;font-size:.7rem;color:var(--accent);}
+.card h3{font-family:"Playfair Display",serif;font-size:1.65rem;line-height:1.05;margin:55px 0 12px;}
+.card p{color:var(--muted);font-size:.92rem;}
+.dark .card p{color:#9db0b9;}
+.arrow{position:absolute;right:22px;bottom:20px;font-size:1.2rem;color:var(--accent);}
+.lights{display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;background:none;border:0;color:#b9d0dc;cursor:pointer;font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 4px;min-height:44px;touch-action:manipulation;}
+.lights .switch{background:rgba(144,213,255,.35);}
+/* FIELD NOTES */
+.field-notes{background:var(--paper);overflow:hidden;}
+.field-notes .section-head{margin-bottom:38px;}
+.notes-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start;}
+.notes-scroll-wrap{position:relative;min-width:0;}
+.notes-scroll{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;padding:8px 4px 28px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#9dbbc8 transparent;-webkit-overflow-scrolling:touch;}
+.notes-scroll::-webkit-scrollbar{height:7px;}
+.notes-scroll::-webkit-scrollbar-track{background:transparent;}
+.notes-scroll::-webkit-scrollbar-thumb{background:#a8c2ce;border-radius:20px;}
+.note-card{flex:0 0 390px;height:500px;border-radius:var(--radius);overflow:hidden;position:relative;scroll-snap-align:start;background:#102A3A;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease;}
+@media(hover:hover){.note-card:hover{transform:translateY(-6px);box-shadow:0 25px 70px rgba(0,0,0,.20);}}
+.note-card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+@media(hover:hover){.note-card:hover .note-card-image{transform:scale(1.04);}}
+.note-card:active .note-card-image{transform:scale(1.03);}
+.note-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,22,32,.02) 0%,rgba(7,22,32,.10) 32%,rgba(7,22,32,.60) 65%,rgba(7,22,32,.95) 100%);}
+.note-card-content{position:absolute;left:28px;right:28px;bottom:27px;z-index:2;color:#fff;}
+.note-card-tag{font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.note-card h3{font-family:"Playfair Display",Georgia,serif;font-size:2.35rem;line-height:1.02;margin:0 0 13px;letter-spacing:-.025em;}
+.note-card p{color:#d8e4e9;font-size:.91rem;line-height:1.55;margin:0 0 18px;max-width:330px;}
+.note-card-link{display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:.8rem;font-weight:600;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:3px;}
+.note-card.new::before{content:"NEW";position:absolute;top:20px;left:20px;z-index:5;padding:6px 9px;border-radius:999px;background:var(--accent);color:var(--ink);font-family:"DM Mono",monospace;font-size:.62rem;font-weight:500;letter-spacing:.08em;}
+.research-sidebar{background:var(--ink-2);border:1px solid rgba(144,213,255,.12);border-radius:var(--radius);padding:32px 28px;color:#fff;display:flex;flex-direction:column;}
+.research-sidebar .kicker{color:var(--accent);margin-bottom:12px;font-size:.7rem;}
+.research-sidebar h3{font-family:"Playfair Display",Georgia,serif;font-size:2.1rem;line-height:1.08;letter-spacing:-.025em;margin:0 0 16px;}
+.research-sidebar h3 a{color:#fff;text-decoration:none;}
+.research-sidebar h3 a:hover{color:var(--accent);}
+.research-sidebar p{color:#b9cbd4;font-size:.95rem;line-height:1.7;margin:0 0 25px;}
+.research-sidebar .note-card-link{color:var(--accent);border-bottom-color:var(--accent);font-size:.85rem;align-self:flex-start;}
+.research-meta{margin-top:auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-family:"DM Mono",monospace;font-size:.65rem;letter-spacing:.08em;color:#8ba3ae;}
+/* TIMELINE */
+.timeline{position:relative;border-left:1px solid rgba(144,213,255,.25);margin-left:10px;}
+.timeline-item{position:relative;padding:0 0 48px 40px;display:grid;grid-template-columns:110px 1fr;gap:30px;}
+.timeline-item:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--ink);}
+.year{font-family:"DM Mono",monospace;font-size:.75rem;color:var(--accent);}
+.timeline h3{margin:0;font-family:"Playfair Display",serif;font-size:1.55rem;}
+.timeline p{margin:5px 0 0;color:#9db0b9;}
+/* NUMBERS */
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(144,213,255,.14);border:1px solid rgba(144,213,255,.14);}
+.number{padding:35px 28px;background:var(--ink-2);min-height:170px;}
+.number strong{font-family:"Playfair Display",serif;font-size:3.2rem;display:block;color:#fff;}
+.number span{color:#9db0b9;font-size:.82rem;}
+/* RESEARCH NOTES */
+.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.note{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;min-height:310px;display:flex;flex-direction:column;}
+.note .tag{font-family:"DM Mono",monospace;color:var(--accent-dark);font-size:.68rem;text-transform:uppercase;}
+.note h3{font-family:"Playfair Display",serif;font-size:1.9rem;line-height:1.08;margin:30px 0 12px;}
+.note p{color:var(--muted);font-size:.92rem;}
+.note-footer{margin-top:auto;padding-top:22px;font-size:.77rem;color:#888;}
+.dark .note{background:var(--ink-2);border-color:rgba(144,213,255,.12);}
+.dark .note .tag{color:var(--accent);}
+.dark .note h3{color:#fff;}
+.dark .note p{color:#b9cbd4;}
+.dark .note-footer{color:#8ba3ae;border-top:1px solid rgba(255,255,255,.08);}
+/* NOW */
+.now{background:#dcecf3;}
+.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.now-panel{background:rgba(255,255,255,.55);border:1px solid rgba(16,42,58,.1);border-radius:var(--radius);padding:32px;}
+.now-panel h3{font-family:"Playfair Display",serif;font-size:2rem;margin:0 0 15px;}
+.now-panel p{color:#505b60;}
+.list{margin:0;padding:0;list-style:none;}
+.list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,.1);display:flex;justify-content:space-between;gap:20px;}
+.list li:last-child{border:0;}
+.list span:last-child{color:var(--muted);font-family:"DM Mono",monospace;font-size:.7rem;}
+/* ABOUT */
+.about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;}
+.principles{display:grid;gap:12px;}
+.principle{border-top:1px solid var(--line);padding:20px 0;display:grid;grid-template-columns:55px 1fr;gap:20px;}
+.principle b{font-family:"DM Mono",monospace;color:var(--accent-dark);font-size:.72rem;}
+.principle h3{margin:0;font-size:1.05rem;}
+.principle p{margin:4px 0 0;color:var(--muted);font-size:.9rem;}
+/* SOURCES */
+.sources{background:#f8f6f0;}
+.source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.source{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;}
+.source small{display:block;color:var(--accent-dark);font-family:"DM Mono",monospace;margin-bottom:5px;}
+.source a{text-decoration:underline;text-decoration-color:#bbb;text-underline-offset:3px;}
+/* CONTACT */
+.contact{background:var(--ink);color:#fff;text-align:center;padding-bottom:140px;position:relative;overflow:hidden;}
+.contact .container{position:relative;z-index:2;}
+.contact h2{max-width:850px;margin:10px auto 20px;}
+.contact p{color:#b4c6cf;max-width:600px;margin:0 auto 30px;}
+.contact .btn{color:#fff;}
+.contact .btn.primary{color:#102A3A;}
+/* FOOTER */
+.footer{background:#0c2230;color:#8ea4ae;padding:25px 28px;font-size:.75rem;}
+.footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:20px;}
+.footer a{color:var(--accent);}
+/* LOADER */
+.loader{position:fixed;inset:0;height:100vh;height:100dvh;z-index:200;background:#070707;color:#f1ebe0;display:flex;align-items:center;justify-content:center;will-change:transform;}
+.loader .word{font-family:"Playfair Display",Georgia,serif;font-size:clamp(44px,9vw,120px);letter-spacing:.14em;display:flex;will-change:transform,opacity;}
+.loader .word span{opacity:0;display:inline-block;}
+.loader .bar{position:absolute;left:50%;top:calc(50% + clamp(40px,7vw,90px));width:min(320px,60vw);height:2px;transform:translateX(-50%);background:rgba(255,255,255,.12);}
+.loader .bar i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:#90D5FF;}
+.loader .foot{position:absolute;left:var(--pad,28px);right:var(--pad,28px);bottom:28px;display:flex;justify-content:space-between;font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8f887d;}
+/* REVEAL (driven by JS) */
+.reveal{opacity:0;}
 @media(max-width:1000px){
-
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero-grid,
-  .intro-grid,
-  .about-grid{
-
-    grid-template-columns:1fr;
-
-    gap:45px;
-
-  }
-
-  .hero h1{
-    font-size:clamp(4rem,15vw,7rem);
-  }
-
-  .feature{
-    grid-template-columns:1fr;
-  }
-
-  .notes-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .numbers{
-    grid-template-columns:1fr 1fr;
-  }
-
-  /* Notes layout stacks on tablet */
-  .notes-layout{
-    grid-template-columns:1fr;
-    gap:50px;
-  }
-
+  .cards{grid-template-columns:1fr 1fr;}
+  .hero-grid,.intro-grid,.about-grid{grid-template-columns:1fr;gap:45px;}
+  .hero h1{font-size:clamp(4rem,15vw,7rem);}
+  .notes-grid{grid-template-columns:1fr 1fr;}
+  .numbers{grid-template-columns:1fr 1fr;}
+  .notes-layout{grid-template-columns:1fr;gap:50px;}
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media(max-width:720px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .menu{
-    display:block;
-  }
-
-  .nav-links.open{
-
-    display:flex;
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    top:56px;
-
-    padding:18px 28px;
-
-    background:var(--ink);
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-  }
-
-  .section{
-    padding:80px 20px;
-  }
-
-  .nav-inner{
-    padding:13px 20px;
-  }
-
-  .hero-grid{
-    padding:120px 20px 70px;
-  }
-
-  .cards,
-  .notes-grid,
-  .numbers,
-  .source-list,
-  .now-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-  .timeline-item{
-
-    grid-template-columns:1fr;
-
-    gap:5px;
-
-    padding-left:28px;
-
-  }
-
-  .section-head{
-    display:block;
-  }
-
-  .section-head p{
-    margin-top:20px;
-  }
-
-  .footer-inner{
-    display:block;
-  }
-
-  /* Field notes mobile adjustments */
-
-  .note-card{
-
-    flex-basis:84vw;
-
-    height:520px;
-
-  }
-
-  .note-card h3{
-
-    font-size:2.3rem;
-
-  }
-
+  .nav-links{display:none;}
+  .menu{display:block;}
+  .nav-links.open{display:flex;position:absolute;left:0;right:0;top:56px;padding:18px 28px;background:var(--ink);flex-direction:column;align-items:flex-start;}
+  .section{padding:80px 20px;}
+  .nav-inner{padding:13px 20px;}
+  .hero-grid{padding:150px 20px 70px;}
+  .toggle{right:20px;}
+  .cards,.notes-grid,.numbers,.source-list,.now-grid{grid-template-columns:1fr;}
+  .timeline-item{grid-template-columns:1fr;gap:5px;padding-left:28px;}
+  .section-head{display:block;}
+  .section-head p{margin-top:20px;}
+  .footer-inner{display:block;}
+  .note-card{flex-basis:84vw;height:520px;}
+  .note-card h3{font-size:2.3rem;}
 }
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
 @media(max-width:480px){
-
-  .hero h1{
-    font-size:3.7rem;
-  }
-
-  .note-card{
-
-    flex-basis:88vw;
-
-    height:500px;
-
-  }
-
-  .note-card h3{
-
-    font-size:2.15rem;
-
-  }
-
+  .hero h1{font-size:3.7rem;}
+  .note-card{flex-basis:88vw;height:500px;}
+  .note-card h3{font-size:2.15rem;}
 }
-
 </style>
-
 </head>
-
 <body>
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
-
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="word" id="lword"><span>V</span><span>I</span><span>S</span><span>H</span><span>N</span><span>U</span></div>
+  <div class="bar"><i id="lbar"></i></div>
+  <div class="foot"><span>Field notes · Public policy</span><span id="lpct">000</span></div>
+</div>
+<!-- NAVIGATION -->
 <nav class="nav">
-
   <div class="nav-inner">
-
-    <a class="logo" href="#top">
-      VISHNU<span>.</span>
-    </a>
-
-    <button
-      class="menu"
-      aria-label="Open menu"
-      onclick="document.querySelector('.nav-links').classList.toggle('open')"
-    >
-      ☰
-    </button>
-
+    <a class="logo" href="#top">VISHNU<span>.</span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links">
-
       <a href="#about">About</a>
-
       <a href="#work">Work</a>
-
       <a href="#notes">Notes</a>
-
       <a href="#research">Research</a>
-
       <a href="#journey">Journey</a>
-
       <a href="#now">Now</a>
-
-      <a class="nav-cta" href="#contact">
-        Say hello
-      </a>
-
+      <a class="nav-cta" href="#contact">Say hello</a>
     </div>
-
   </div>
-
+  <div class="progress" id="prog"></div>
 </nav>
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
+<!-- HERO -->
 <header class="hero" id="top">
-
+  <!-- Subtle photo stage. Drop hero-day.jpg / hero-night.jpg (same framing, 1456x813)
+       next to this file to replace the built-in line-art. -->
+  <div class="stage" id="hstage" aria-hidden="true">
+    <div class="layer day">
+      <svg viewBox="0 0 1456 813" preserveAspectRatio="xMidYMid slice">
+        <defs><linearGradient id="dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdde4"/><stop offset="1" stop-color="#e9eef0"/></linearGradient></defs>
+        <rect width="1456" height="813" fill="url(#dsky)"/>
+        <g fill="#bccdd6" opacity=".7">
+          <path d="M728 190 L1010 330 H446 Z"/>
+          <rect x="446" y="330" width="564" height="26"/>
+          <rect x="470" y="356" width="516" height="22" opacity=".7"/>
+          <g id="cols"><rect x="490" y="378" width="34" height="300"/><rect x="570" y="378" width="34" height="300"/><rect x="650" y="378" width="34" height="300"/><rect x="772" y="378" width="34" height="300"/><rect x="852" y="378" width="34" height="300"/><rect x="932" y="378" width="34" height="300"/></g>
+          <rect x="440" y="678" width="576" height="22"/><rect x="410" y="700" width="636" height="22"/><rect x="380" y="722" width="696" height="22"/><rect x="350" y="744" width="756" height="70"/>
+        </g>
+        <g fill="#a9bfcb" opacity=".5"><path d="M1120 0 L1456 0 L1456 813 L1180 813 Z"/></g>
+        <g stroke="#fff" stroke-width="2" opacity=".35"><path d="M1190 0 L1190 813 M1260 0 L1260 813 M1330 0 L1330 813 M1120 130 H1456 M1120 300 H1456 M1120 470 H1456"/></g>
+      </svg>
+      <img src="hero-day.jpg" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="layer night">
+      <svg viewBox="0 0 1456 813" preserveAspectRatio="xMidYMid slice">
+        <defs><linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2230"/><stop offset="1" stop-color="#102A3A"/></linearGradient></defs>
+        <rect width="1456" height="813" fill="url(#nsky)"/>
+        <g fill="#1c4256" opacity=".8">
+          <path d="M728 190 L1010 330 H446 Z"/>
+          <rect x="446" y="330" width="564" height="26"/>
+          <rect x="470" y="356" width="516" height="22" opacity=".7"/>
+          <rect x="490" y="378" width="34" height="300"/><rect x="570" y="378" width="34" height="300"/><rect x="650" y="378" width="34" height="300"/><rect x="772" y="378" width="34" height="300"/><rect x="852" y="378" width="34" height="300"/><rect x="932" y="378" width="34" height="300"/>
+          <rect x="440" y="678" width="576" height="22"/><rect x="410" y="700" width="636" height="22"/><rect x="380" y="722" width="696" height="22"/><rect x="350" y="744" width="756" height="70"/>
+        </g>
+        <g fill="#90D5FF" opacity=".5"><rect x="614" y="440" width="28" height="64" rx="3"/><rect x="694" y="440" width="28" height="64" rx="3"/><rect x="734" y="440" width="28" height="64" rx="3"/><rect x="814" y="440" width="28" height="64" rx="3"/><rect x="614" y="560" width="28" height="64" rx="3" opacity=".5"/><rect x="814" y="560" width="28" height="64" rx="3" opacity=".5"/></g>
+        <g fill="#ffd9a0" opacity=".55"><circle cx="728" cy="270" r="6"/></g>
+        <g fill="#16384A" opacity=".8"><path d="M1120 0 L1456 0 L1456 813 L1180 813 Z"/></g>
+        <g fill="#ffd9a0" opacity=".3"><rect x="1210" y="90" width="22" height="30"/><rect x="1280" y="260" width="22" height="30"/><rect x="1350" y="430" width="22" height="30"/><rect x="1210" y="600" width="22" height="30"/></g>
+      </svg>
+      <img src="hero-night.jpg" alt="" onerror="this.style.display='none'">
+    </div>
+  </div>
+  <button class="toggle" id="htoggle" aria-pressed="false" aria-label="Switch the hero to night">
+    <span id="hlabel">Day</span>
+    <span class="switch"><span class="knob" id="hknob"></span></span>
+  </button>
   <div class="hero-grid">
-
     <div>
-
       <div class="eyebrow">
         Vishnu Chandran · IAS 2015 · Tamil Nadu · AI-assisted
       </div>
-
       <h1>
         People. Places.<br>
         Ideas. <em>Learning.</em>
       </h1>
-
       <p class="hero-deck">
-
         Notes from a life spent moving between cities, field administration,
         public policy, technology, skills, data — and the questions that sit underneath them.
-
       </p>
-
       <div class="hero-actions">
-
         <a class="btn primary" href="#notes">
           Read the notes →
         </a>
-
         <a class="btn" href="#about">
           Know my journey
         </a>
-
       </div>
-
     </div>
-
     <aside class="hero-side">
-
       <div class="identity-card">
-
         <div class="big">
-
           A Student.<br>
           A civil servant.<br>
           A traveller.<br>
           An observer.
-
         </div>
-
         <p>
-
           Electronics engineer by training, public-policy practitioner by profession,
           and a continuing student of economics, governance and people.
-
         </p>
-
         <div class="meta-row">
-
           <div>
-
             <strong>2015</strong>
-
             <span>
               IAS · Tamil Nadu
             </span>
-
           </div>
-
           <div>
-
             <strong>2025–26</strong>
-
             <span>
               Public Policy · GRIPS, Tokyo
             </span>
-
           </div>
-
         </div>
-
       </div>
-
     </aside>
-
   </div>
-
 </header>
-
-<!-- =======================================================
-     FIELD NOTES + RESEARCH SIDEBAR
-======================================================= -->
-
+<!-- FIELD NOTES + RESEARCH SIDEBAR -->
 <section class="section field-notes" id="notes">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           01 · Field Notes & Research
         </div>
-
         <h2>
           Things I noticed. Questions I asked.
         </h2>
-
       </div>
-
       <p>
-
         Observations from everyday life on the left. Deep-dive research on the right.
-
       </p>
-
     </div>
-
     <div class="notes-layout reveal">
-
-      <!-- ===================================================
-           LEFT COLUMN — SCROLLING FIELD NOTES
-      ==================================================== -->
-
       <div class="notes-scroll-wrap">
-
         <div class="notes-scroll">
-
-          <!-- NEWEST ARTICLE -->
-
           <a
             class="note-card new"
             href="train.html"
           >
-
             <img
               class="note-card-image"
               src="train.JPG"
               alt="Forty Eight shades of Brown : Tokyo Fashion"
               loading="eager"
             >
-
             <div class="note-card-content">
-
               <div class="note-card-tag">
                 Latest · Tokyo · Field Note
               </div>
-
               <h3>
                 Forty Eight shades of Brown : Tokyo Fashion
               </h3>
-
               <p>
                 Japanese sense of colour is very unique and stylish. A field note on the minimalist trend, Edo period laws, and 'iki'.
               </p>
-
               <span class="note-card-link">
                 Read the field note →
               </span>
-
             </div>
-
           </a>
-
-          <!-- PREVIOUS ARTICLE -->
-
           <a
             class="note-card"
             href="onsen.html"
           >
-
             <img
               class="note-card-image"
               src="onsen.jpeg"
               alt="Boiling together in Onsen"
               loading="lazy"
             >
-
             <div class="note-card-content">
-
               <div class="note-card-tag">
                 Tokyo · Field Note
               </div>
-
               <h3>
                 Boiling together in Onsen
               </h3>
-
               <p>
                 Nudity is a great equalizer. A field note on 'hadaka no tsukiai' — the naked communication culture of Japan's hot springs.
               </p>
-
               <span class="note-card-link">
                 Read the field note →
               </span>
-
             </div>
-
           </a>
-
-          <!-- PREVIOUS ARTICLE -->
-
           <a
             class="note-card"
             href="in-search-of-arigatos.html"
           >
-
             <img
               class="note-card-image"
               src="in-search-of-arigatos.jpeg"
               alt="In Search of Arigatos"
               loading="lazy"
             >
-
             <div class="note-card-content">
-
               <div class="note-card-tag">
                 Tokyo · Field Note
               </div>
-
               <h3>
                 In Search of Arigatos..
               </h3>
-
               <p>
                 A lift ride in Japan becomes a lesson in unspoken rules,
                 hierarchy, consideration and the quiet choreography of public space.
               </p>
-
               <span class="note-card-link">
                 Read the field note →
               </span>
-
             </div>
-
           </a>
-
-          <!-- PREVIOUS ARTICLE -->
-
           <a
             class="note-card"
             href="two-hands-one-tray.html"
           >
-
             <img
               class="note-card-image"
               src="two-hands-one-tray.jpeg"
               alt="Two Hands, One Tray - Zero Touch"
               loading="lazy"
             >
-
             <div class="note-card-content">
-
               <div class="note-card-tag">
                 Tokyo · Field Note
               </div>
-
               <h3>
                 Two Hands, One Tray - Zero Touch!!
               </h3>
-
               <p>
                 A small observation from a Tokyo konbini about money,
                 touch, politeness, trust, bargaining and a little blue tray.
               </p>
-
               <span class="note-card-link">
                 Read the field note →
               </span>
-
             </div>
-
           </a>
-
         </div>
-
       </div>
-
-      <!-- ===================================================
-           RIGHT COLUMN — RESEARCH HIGHLIGHT
-      ==================================================== -->
-
       <aside class="research-sidebar">
-
         <div class="kicker">
           Research Note
         </div>
-
         <h3>
           <a href="free-bus-rides.html">
             Free Bus Rides: A Subsidy for Women, A Bonus for Men
           </a>
         </h3>
-
         <p>
           Married women reduced work hours; husbands reduced chores; the savings are spent elsewhere.
           A close reading of a new causal study from India.
         </p>
-
         <a href="free-bus-rides.html" class="note-card-link">
           Read the full research →
         </a>
-
         <div class="research-meta">
           Economics · Causal Inference · India
         </div>
-
       </aside>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     ABOUT / INTRO
-======================================================= -->
-
+<!-- ABOUT / INTRO -->
 <section class="section intro" id="about">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           02 · The idea
         </div>
-
         <h2>
           A website for things that I forget fast.
         </h2>
-
       </div>
-
       <p>
-
         Not a conventional résumé. Not an official government page.
         A personal archive of observations, questions, experiments and lessons.
-
       </p>
-
     </div>
-
     <div class="intro-grid reveal">
-
       <blockquote class="quote">
-
         “Life is where ideas meet reality — and reality is usually more interesting.”
-
       </blockquote>
-
       <div class="prose">
-
         <p>
-
           I have spent the last one and a half decade moving through different layers of professions:
           a teacher, a programmer, a postman, administration, municipalities, water, urban governance,
           government ITIs, employment and skills, and policy work in the State Secretariat etc..
-
         </p>
-
         <p>
-
           Every posting changes the question. A drought makes water policy tangible.
           A municipal corporation makes urban governance less abstract.
           An ITI makes the distance between education and employment visible.
           Living and studying in Japan makes it possible to look at familiar Indian questions
           from a different institutional and cultural distance.
-
         </p>
-
         <p>
-
           This space is where those observations will accumulate — field notes, essays,
           research, photographs, data experiments, books, travel, people, ideas and unfinished questions.
-
         </p>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     WORK
-======================================================= -->
-
+<!-- WORK -->
 <section class="section dark" id="work">
-
+  <div class="backdrop" aria-hidden="true">
+    <svg viewBox="0 0 1456 813" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#90D5FF" stroke-width="1.5"><path d="M0 700 H1456 M0 740 H1456"/><path d="M120 700 V300 M220 700 V300 M320 700 V300 M420 700 V300 M520 700 V300"/><path d="M80 300 H560 L320 190 Z"/><path d="M900 700 V420 H1000 V700 M1000 700 V320 H1100 V700 M1100 700 V380 H1200 V700 M1200 700 V460 H1300 V700"/></g></svg>
+    <img src="section-work.jpg" alt="" onerror="this.style.display='none'">
+  </div>
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           03 · Territories
         </div>
-
         <h2>
           Four places where I keep looking.
         </h2>
-
       </div>
-
       <p>
-
         The categories will evolve. The underlying curiosity probably will not.
-
       </p>
-
     </div>
-
+    <button class="lights" id="ltoggle" aria-pressed="true" aria-label="Turn the territories off">
+      <span id="llabel">Lights on</span>
+      <span class="switch"><span class="knob" id="lknob"></span></span>
+    </button>
     <div class="cards reveal">
-
       <article class="card">
-
         <div class="card-num">
           01 / GOVERNANCE
         </div>
-
         <h3>
           What makes institutions work?
         </h3>
-
         <p>
-
           Districts, cities, departments, implementation, incentives, accountability
           and the gap between policy intent and lived reality.
-
         </p>
-
         <div class="arrow">↗</div>
-
       </article>
-
       <article class="card">
-
         <div class="card-num">
           02 / PEOPLE
         </div>
-
         <h3>
           What do systems do to people?
         </h3>
-
         <p>
-
           Skills, education, jobs, migration, opportunity and the small administrative
           decisions that can alter a person's trajectory.
-
         </p>
-
         <div class="arrow">↗</div>
-
       </article>
-
       <article class="card">
-
         <div class="card-num">
           03 / DATA + TECH
         </div>
-
         <h3>
           Can evidence improve decisions?
         </h3>
-
         <p>
-
           Economics, econometrics, geospatial thinking, AI and practical technology —
           without confusing a dashboard for good governance.
-
         </p>
-
         <div class="arrow">↗</div>
-
       </article>
-
       <article class="card">
-
         <div class="card-num">
           04 / INNER LIFE
         </div>
-
         <h3>
           What happens behind the official?
         </h3>
-
         <p>
-
           Books, spirituality, travel, solitude, attention, meaning and the ordinary
           experiences that shape a decision-maker.
-
         </p>
-
         <div class="arrow">↗</div>
-
       </article>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     OPERATING PRINCIPLES
-======================================================= -->
-
+<!-- OPERATING PRINCIPLES -->
 <section class="section about">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           04 · Operating principles
         </div>
-
         <h2>
           Things I am trying to get better at.
         </h2>
-
       </div>
-
       <p>
-
         These are deliberately provisional. A personal website should show the evolution,
         not pretend the evolution is finished.
-
       </p>
-
     </div>
-
     <div class="about-grid">
-
       <div class="prose reveal">
-
         <p>
-
           My professional path has moved from engineering and technology into public administration,
           economics, municipal governance, water, district administration and skills development.
           That variety has made me suspicious of single-discipline answers.
-
         </p>
-
         <p>
-
           I increasingly want to understand public problems as systems:
           incentives, institutions, people, geography, technology, finance and behaviour
           interacting at the same time.
-
         </p>
-
         <p>
-
           The website therefore has one central rule:
           <strong>curiosity before certainty.</strong>
-
           A field observation can be wrong. A statistic can mislead.
           A policy can have an unintended consequence.
           The point of writing is to make the reasoning visible enough to be questioned.
-
         </p>
-
       </div>
-
       <div class="principles reveal">
-
         <div class="principle">
-
           <b>01</b>
-
           <div>
-
             <h3>
               Look before explaining.
             </h3>
-
             <p>
               Spend time with the actual problem before reaching for a theory.
             </p>
-
           </div>
-
         </div>
-
         <div class="principle">
-
           <b>02</b>
-
           <div>
-
             <h3>
               Data should sharpen judgement.
             </h3>
-
             <p>
               Numbers are evidence, not substitutes for thinking.
             </p>
-
           </div>
-
         </div>
-
         <div class="principle">
-
           <b>03</b>
-
           <div>
-
             <h3>
               Institutions matter.
             </h3>
-
             <p>
               Good intentions rarely survive weak systems.
             </p>
-
           </div>
-
         </div>
-
         <div class="principle">
-
           <b>04</b>
-
           <div>
-
             <h3>
               Stay intellectually unfinished.
             </h3>
-
             <p>
               Change your mind when the evidence deserves it.
             </p>
-
           </div>
-
         </div>
-
         <div class="principle">
-
           <b>05</b>
-
           <div>
-
             <h3>
               Keep the human being visible.
             </h3>
-
             <p>
               Every policy eventually reaches an individual person.
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     JOURNEY
-======================================================= -->
-
+<!-- JOURNEY -->
 <section class="section dark" id="journey">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           05 · Journey
         </div>
-
         <h2>
           A career in movement.
         </h2>
-
       </div>
-
       <p>
-
         A simplified public timeline. For exact service records,
         refer to official government records.
-
       </p>
-
     </div>
-
     <div class="timeline reveal">
-
       <div class="timeline-item">
-
         <div class="year">
           2007–11
         </div>
-
         <div>
-
           <h3>
             Engineering
           </h3>
-
           <p>
-
             B.Tech in Electronics & Communication Engineering,
             Government Engineering College, Barton Hill, Thiruvananthapuram.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           Early career
         </div>
-
         <div>
-
           <h3>
             Technology → public service
           </h3>
-
           <p>
-
             Worked at Tata Elxsi before entering the civil services pathway.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2015
         </div>
-
         <div>
-
           <h3>
             Indian Administrative Service
           </h3>
-
           <p>
-
             Selected to the IAS, Tamil Nadu cadre, 2015 batch.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2017–21
         </div>
-
         <div>
-
           <h3>
             District administration
           </h3>
-
           <p>
-
             Assistant Collector, Sub Collector, Additional District Magistrate
             and Executive Officer responsibilities across Tamil Nadu.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2021–22
         </div>
-
         <div>
-
           <h3>
             Municipal Commissioner · Tirunelveli
           </h3>
-
           <p>
-
             Led a major urban local-government institution before moving
             into state-level municipal administration.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2022–23
         </div>
-
         <div>
-
           <h3>
             Municipal administration + water
           </h3>
-
           <p>
-
             Joint Commissioner, Municipal Administration; associated with
             Tamil Nadu Water Investment Company Limited.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2023–24
         </div>
-
         <div>
-
           <h3>
             Collector · Ramanathapuram
           </h3>
-
           <p>
-
             District administration — a period of intense exposure to agriculture,
             livelihoods, disaster management and citizen-facing governance.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2024–25
         </div>
-
         <div>
-
           <h3>
             State policy + employment & training
           </h3>
-
           <p>
-
             Moved through Secretariat responsibilities and then served as Director,
             Employment and Training, focusing on industrial training and employability.
-
           </p>
-
         </div>
-
       </div>
-
       <div class="timeline-item">
-
         <div class="year">
           2025–26
         </div>
-
         <div>
-
           <h3>
             Tokyo · Public Policy
           </h3>
-
           <p>
-
             Master's-level public policy study at the National Graduate Institute
             for Policy Studies (GRIPS), Japan, alongside continued interest in
             governance, data and comparative public administration.
-
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     RESEARCH
-======================================================= -->
-
+<!-- RESEARCH -->
 <section class="section dark" id="research">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           06 · Research lens
         </div>
-
         <h2>
           Questions I want to answer with evidence.
         </h2>
-
       </div>
-
       <p>
-
         The research area is where field experience meets economics,
         data and comparative policy.
-
       </p>
-
     </div>
-
     <div class="numbers reveal">
-
       <div class="number">
-
         <strong>
           10+
         </strong>
-
         <span>
           years of public-service experience since joining the IAS
         </span>
-
       </div>
-
       <div class="number">
-
         <strong>
           3
         </strong>
-
         <span>
           interlocking lenses: governance · economics · technology
         </span>
-
       </div>
-
       <div class="number">
-
         <strong>
           2
         </strong>
-
         <span>
           systems increasingly compared: India and Japan
         </span>
-
       </div>
-
       <div class="number">
-
         <strong>
           1
         </strong>
-
         <span>
           recurring question: what actually works?
         </span>
-
       </div>
-
     </div>
-
     <div style="height:24px"></div>
-
     <div class="notes-grid reveal">
-
       <article class="note">
-
         <div class="tag">
           Urban governance
         </div>
-
         <h3>
           Smart cities: intent vs effectiveness
         </h3>
-
         <p>
-
           Comparing policy design, institutional architecture,
           expenditure and implementation in India and Japan.
-
         </p>
-
         <div class="note-footer">
           Comparative public policy · cities · decentralisation
         </div>
-
       </article>
-
       <article class="note">
-
         <div class="tag">
           Skills + labour
         </div>
-
         <h3>
           Does vocational training translate into jobs?
         </h3>
-
         <p>
-
           Exploring student-level outcomes in Tamil Nadu ITIs and
           the characteristics associated with employment.
-
         </p>
-
         <div class="note-footer">
           ITI · employability · econometrics
         </div>
-
       </article>
-
       <article class="note">
-
         <div class="tag">
           Data + institutions
         </div>
-
         <h3>
           What does administrative data hide?
         </h3>
-
         <p>
-
           Questions about selection, measurement, incentives, implementation
           and the difference between recorded activity and real outcomes.
-
         </p>
-
         <div class="note-footer">
           Evidence · evaluation · public management
         </div>
-
       </article>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     NOW
-======================================================= -->
-
+<!-- NOW -->
 <section class="section now" id="now">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           07 · Now
         </div>
-
         <h2>
           What I am looking at these days.
         </h2>
-
       </div>
-
       <p>
-
         This section should change often. It makes the website feel alive rather than archived.
-
       </p>
-
     </div>
-
     <div class="now-grid reveal">
-
       <div class="now-panel">
-
         <h3>
           In Tokyo
         </h3>
-
         <p>
-
           Studying public policy at GRIPS while observing Japan — its cities, trains,
           local institutions, public spaces, ageing society, disaster preparedness
           and everyday administrative design.
-
         </p>
-
         <ul class="list">
-
           <li>
             <span>Public policy</span>
             <span>GRIPS</span>
           </li>
-
           <li>
             <span>India ↔ Japan</span>
             <span>comparison</span>
           </li>
-
           <li>
             <span>Urban governance</span>
             <span>field notes</span>
           </li>
-
         </ul>
-
       </div>
-
       <div class="now-panel">
-
         <h3>
           On my desk
         </h3>
-
         <ul class="list">
-
           <li>
             <span>Economics & econometrics</span>
             <span>learning</span>
           </li>
-
           <li>
             <span>AI & public administration</span>
             <span>exploring</span>
           </li>
-
           <li>
             <span>ITI outcomes</span>
             <span>research</span>
           </li>
-
           <li>
             <span>Local government</span>
             <span>thinking</span>
           </li>
-
           <li>
             <span>Travel & field journals</span>
             <span>writing</span>
           </li>
-
         </ul>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     SOURCES
-======================================================= -->
-
+<!-- SOURCES -->
 <section class="section sources">
-
   <div class="container">
-
     <div class="section-head reveal">
-
       <div>
-
         <div class="kicker">
           08 · Verification
         </div>
-
         <h2>
           What is this biography based on?
         </h2>
-
       </div>
-
       <p>
-
         I would rather show the provenance than manufacture an impressive biography.
-
       </p>
-
     </div>
-
     <div class="source-list reveal">
-
       <div class="source">
-
         <small>
           PROFESSIONAL
         </small>
-
         <a
           href="https://www.linkedin.com/in/vishnu-chandran-88518b50"
           target="_blank"
@@ -3070,57 +1073,42 @@ button{
         >
           LinkedIn — Vishnu Chandran, IAS 2015
         </a>
-
         <br>
-
         <span>
           Professional profile and education history.
         </span>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     CONTACT
-======================================================= -->
-
+<!-- CONTACT -->
 <section class="section contact" id="contact">
-
+  <div class="backdrop" aria-hidden="true">
+    <svg viewBox="0 0 1456 813" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#90D5FF" stroke-width="1.5"><path d="M0 720 H1456"/><path d="M500 720 V380 M580 720 V380 M660 720 V380 M796 720 V380 M876 720 V380 M956 720 V380"/><path d="M460 380 H996 L728 250 Z"/></g></svg>
+    <img src="section-contact.jpg" alt="" onerror="this.style.display='none'">
+  </div>
   <div class="container">
-
     <div class="kicker">
       09 · Contact
     </div>
-
     <h2>
       Have a question worth thinking about?
     </h2>
-
     <p>
-
       I am interested in conversations around public policy, local governance,
       economics, technology, skills, cities, India–Japan comparisons and ideas
       that make us look at familiar problems differently.
-
     </p>
-
     <div
       class="hero-actions"
       style="justify-content:center"
     >
-
       <a
         class="btn primary"
         href="mailto:YOUR-EMAIL@example.com"
       >
         Write to me →
       </a>
-
       <a
         class="btn"
         href="https://www.linkedin.com/in/vishnu-chandran-88518b50"
@@ -3129,118 +1117,253 @@ button{
       >
         LinkedIn
       </a>
-
     </div>
-
     <p
       style="margin-top:35px;font-size:.75rem"
     >
-
       Views expressed here are personal and do not represent the views of the Government
       of India or the Government of Tamil Nadu.
-
     </p>
-
   </div>
-
 </section>
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
+<!-- FOOTER -->
 <footer class="footer">
-
   <div class="footer-inner">
-
     <span>
       © <span id="year"></span> Vishnu Chandran
     </span>
-
     <span>
       Field notes · Policy · Data · Life
     </span>
-
     <span>
-
       <a href="#top">
         Back to top ↑
       </a>
-
     </span>
-
   </div>
-
 </footer>
-
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
-
 <script>
-
-/* Current year */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const observer = new IntersectionObserver(
-
-  (entries)=>{
-
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting){
-
-        entry.target.classList.add("visible");
-
-      }
-
-    });
-
-  },
-
-  {
-    threshold:.12
-  }
-
-);
-
-document
-  .querySelectorAll(".reveal")
-  .forEach(el=>observer.observe(el));
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
-document
-  .querySelectorAll(".nav-links a")
-  .forEach(a=>{
-
-    a.addEventListener("click",()=>{
-
-      document
-        .querySelector(".nav-links")
-        .classList.remove("open");
-
-    });
-
+document.getElementById("year").textContent = new Date().getFullYear();
+/* mobile nav */
+document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>document.querySelector(".nav-links").classList.remove("open")));
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const clamp = (v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp = (a,b,t)=>a+(b-a)*t;
+const easeInOutCubic = t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeInOutSine  = t=>-(Math.cos(Math.PI*t)-1)/2;
+const easeOutQuart   = t=>1-Math.pow(1-t,4);
+const easeOutExpo    = t=>t>=1?1:1-Math.pow(2,-10*t);
+const seg = (t,a,b)=>clamp((t-a)/(b-a));
+const hex = h=>[1,3,5].map(i=>parseInt(h.substr(i,2),16));
+const mix = (a,b,t)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],t))).join(",")})`;};
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ---------- elements ---------- */
+const loader=$("loader"), lword=$("lword"), letters=[...lword.children], lbar=$("lbar"), lpct=$("lpct");
+const hero=document.querySelector(".hero"), stage=$("hstage"), nightLayer=stage.querySelector(".night");
+const heroText=[document.querySelector(".eyebrow"),document.querySelector(".hero h1"),document.querySelector(".hero-deck"),document.querySelector(".hero-actions"),document.querySelector(".hero-side")];
+const htoggle=$("htoggle"), hlabel=$("hlabel"), hknob=$("hknob");
+const ltoggle=$("ltoggle"), llabel=$("llabel"), lknob=$("lknob");
+const cards=[...document.querySelectorAll("#work .card")];
+const prog=$("prog");
+/* ---------- state ---------- */
+const T0=performance.now();
+let hero_n=0, hero_from=0, hero_to=0, hero_t0=-1e9;     // 0 = day, 1 = night
+let l_from=1, l_to=1, l_t0=-1e9;                        // card lights
+let lightsArrived = reduced ? -1e9 : null;
+const order=[1,3,2,4];                                  // scattered tile order
+let docMax=1, lastH=-1, loaderDone=reduced, heroDone=false;
+try{ history.scrollRestoration="manual"; }catch(e){}
+if(reduced){ loader.remove(); }
+else { document.documentElement.classList.add("locked"); window.scrollTo(0,0); }
+/* ---------- scroll reveal: staggered, per element ---------- */
+const containers=".notes-layout,.intro-grid,.now-grid,.source-list,.numbers,.notes-grid,.principles,.timeline";
+const items=[];
+const seen=new Map();
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting && !seen.has(e.target)){ seen.set(e.target,performance.now()); io.unobserve(e.target); }
+}),{threshold:0,rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".reveal").forEach(el=>{
+  if(el.matches(".cards")){ el.style.opacity=1; return; }
+  const kids = el.matches(containers) ? [...el.children] : [el];
+  if(kids.length>1) el.style.opacity=1;
+  kids.forEach((k,i)=>{
+    const it={el:k,delay:Math.min(i,4)*90,done:false,count:null};
+    const s=k.querySelector && k.matches(".number") ? k.querySelector("strong") : null;
+    if(s){ const m=s.textContent.trim().match(/^(\d+)(.*)$/); if(m) it.count={n:+m[1],suf:m[2],node:s}; }
+    k.style.opacity=0; items.push(it); io.observe(k);
   });
-
-/* =========================================================
-   NOTE: The mouse-wheel hijack has been removed to fix
-   the "getting stuck" scrolling issue. The field notes
-   now scroll horizontally using the scrollbar or touch
-   drag, while vertical page scrolling works smoothly.
-========================================================= */
-
+});
+new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting && lightsArrived===null) lightsArrived=performance.now();
+}),{threshold:.25}).observe(document.querySelector("#work .cards"));
+/* ---------- hero theme (scoped to .hero so the page doesn't restyle) ---------- */
+function setHeroTheme(h){
+  if(Math.abs(h-lastH)<.001) return; lastH=h;
+  const s=hero.style;
+  s.setProperty("--hbg",mix("#dfe8ec","#102A3A",h));
+  s.setProperty("--hfg",mix("#102A3A","#ffffff",h));
+  s.setProperty("--hmut",mix("#46606d","#b9d0dc",h));
+  s.setProperty("--hmut2",mix("#46606d","#c7d7df",h));
+  s.setProperty("--hacc",mix("#1f6f9f","#90D5FF",h));
+  s.setProperty("--pbg",mix("#102A3A","#90D5FF",h));
+  s.setProperty("--pfg",mix("#ffffff","#102A3A",h));
+  s.setProperty("--cbg",`rgba(255,255,255,${lerp(.5,.055,h).toFixed(3)})`);
+  s.setProperty("--cbd",`rgba(${Math.round(lerp(16,144,h))},${Math.round(lerp(42,213,h))},${Math.round(lerp(58,255,h))},${lerp(.14,.18,h).toFixed(3)})`);
+  nightLayer.style.opacity=h;
+  hknob.style.transform=`translateX(${24*h}px)`;
+  const w=h>.5?"Night":"Day"; if(hlabel.textContent!==w) hlabel.textContent=w;
+}
+/* ---------- toggles ---------- */
+htoggle.addEventListener("click",()=>{
+  hero_from=hero_n; hero_to=hero_to?0:1; hero_t0=performance.now();
+  htoggle.setAttribute("aria-pressed",hero_to?"true":"false");
+  htoggle.setAttribute("aria-label",hero_to?"Switch the hero to day":"Switch the hero to night");
+  if(reduced) hero_n=hero_to;
+});
+ltoggle.addEventListener("click",()=>{
+  l_from = l_t0<0 ? 1 : l_to; l_to=l_to?0:1; l_t0=performance.now();
+  ltoggle.setAttribute("aria-pressed",l_to?"true":"false");
+  ltoggle.setAttribute("aria-label",l_to?"Turn the territories off":"Turn the territories on");
+  llabel.textContent=l_to?"Lights on":"Lights off";
+});
+function flicker(p){
+  if(p<=0)return 0; if(p>=1)return 1;
+  if(p<.12)return lerp(0,.9,p/.12);
+  if(p<.2)return lerp(.9,.2,(p-.12)/.08);
+  if(p<.3)return lerp(.2,.95,(p-.2)/.1);
+  return lerp(.95,1,seg(p,.3,1));
+}
+/* ---------- headline words (same text, wrapped for animation) ---------- */
+const words=[];
+(function split(node){
+  [...node.childNodes].forEach(n=>{
+    if(n.nodeType===3){
+      const f=document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(part=>{
+        if(!part) return;
+        if(/^\s+$/.test(part)){ f.appendChild(document.createTextNode(" ")); return; }
+        const sp=document.createElement("span"); sp.className="w"; sp.textContent=part; f.appendChild(sp); words.push(sp);
+      });
+      n.replaceWith(f);
+    } else if(n.nodeType===1 && n.tagName!=="BR") split(n);
+  });
+})(heroText[1]);
+/* ---------- field-note carousel focus (touch / small screens) ---------- */
+const scroller=document.querySelector(".notes-scroll"), ncards=[...scroller.children];
+const touchLike=matchMedia("(hover:none),(max-width:720px)");
+let carDirty=true;
+scroller.addEventListener("scroll",()=>{carDirty=true;},{passive:true});
+addEventListener("resize",()=>{carDirty=true;});
+addEventListener("scroll",()=>{carDirty=true;},{passive:true});
+/* ---------- timeline line that draws as you scroll ---------- */
+const tline=document.querySelector(".timeline"); let lastTl=-1;
+/* ---------- metrics ---------- */
+function measure(){ docMax=Math.max(1,document.documentElement.scrollHeight-innerHeight); }
+addEventListener("resize",measure); addEventListener("load",measure); measure();
+/* ---------- single rAF loop ---------- */
+let lastProg=-1;
+function frame(now){
+  const t=(now-T0)/1000;
+  const sy=window.scrollY||0;
+  /* loader: typed letters + bar, then the panel slides away */
+  if(!loaderDone){
+    const p=clamp((t-.25)/1.8);
+    letters.forEach((el,i)=>{
+      const q=easeOutQuart(seg(p,i*.15,i*.15+.22));
+      el.style.opacity=q; el.style.transform=`translate3d(0,${(1-q)*.45}em,0) scale(${lerp(.92,1,q)})`;
+    });
+    const bp=easeInOutCubic(p);
+    lbar.style.transform=`scaleX(${bp})`;
+    lpct.textContent=String(Math.round(bp*100)).padStart(3,"0");
+    const o=seg(t,2.2,3.15), eo=easeOutExpo(o);
+    loader.style.transform=`translate3d(0,${-100*eo}%,0)`;
+    lword.style.transform=`translate3d(0,${-18*eo}vh,0)`;
+    lword.style.opacity=1-seg(o,0,.5);
+    if(t>3.2){ loader.remove(); loaderDone=true; document.documentElement.classList.remove("locked"); measure(); }
+  }
+  /* hero entrance: pan in from the left, settle, then breathe + scroll parallax */
+  const e=reduced?1:easeOutQuart(seg(t,2.5,3.85));
+  if(sy<innerHeight*1.3){
+    const drift=reduced?0:Math.sin(t*.35)*.5*e;
+    stage.style.transform=`translate3d(-50%,-50%,0) translate3d(${-34*(1-e)+drift}vw,${sy*.18}px,0) scale(${lerp(1.35,1.02,e)+Math.sin(t*.25)*.008*e})`;
+  }
+  if(!heroDone){
+    heroText.forEach((el,i)=>{
+      if(i===1){
+        el.style.opacity=1;
+        words.forEach((w,j)=>{
+          const q=reduced?1:easeOutQuart(seg(t,3.15+j*.11,4.0+j*.11));
+          w.style.opacity=q; w.style.transform=q>=1?"":`translate3d(0,${.55*(1-q)}em,0) rotate(${3*(1-q)}deg)`;
+        });
+        return;
+      }
+      const q=reduced?1:easeOutQuart(seg(t,3.05+i*.13,4.05+i*.13));
+      el.style.opacity=q; el.style.transform=q>=1?"":`translate3d(0,${22*(1-q)}px,0)`;
+    });
+    htoggle.style.opacity=reduced?1:easeOutQuart(seg(t,3.6,4.3));
+    if(reduced||t>4.6) heroDone=true;
+  }
+  /* hero day / night */
+  if(!reduced){
+    const hp=clamp((now-hero_t0)/1250);
+    hero_n=lerp(hero_from,hero_to,easeInOutSine(hp));
+    if(hp>=1) hero_from=hero_to;
+  }
+  setHeroTheme(hero_n);
+  /* staggered reveals + count-up numbers */
+  for(let i=0;i<items.length;i++){
+    const it=items[i]; if(it.done) continue;
+    const s=seen.get(it.el); if(s===undefined) continue;
+    const q=reduced?1:easeOutQuart(clamp((now-s-it.delay)/850));
+    it.el.style.opacity=q;
+    it.el.style.transform=q>=1?"":`translate3d(0,${28*(1-q)}px,0)`;
+    if(it.count) it.count.node.textContent=Math.round(it.count.n*easeOutQuart(clamp((now-s-it.delay)/1400)))+it.count.suf;
+    if(q>=1 && (!it.count || now-s-it.delay>1400)){ it.done=true; if(it.count) it.count.node.textContent=it.count.n+it.count.suf; }
+  }
+  /* territories: cards rise and light up in a scattered order */
+  const lp=reduced?1:clamp((now-l_t0)/1100), lt=easeInOutSine(lp);
+  cards.forEach((c,i)=>{
+    const k=order.indexOf(i+1);
+    let v, rise=1;
+    if(lightsArrived===null){ v=0; rise=0; }
+    else if(l_t0<0){
+      const p=clamp(((now-lightsArrived)/1000-.2-k*.2)/1.1);
+      v=flicker(p); rise=easeOutQuart(clamp(p*1.6));
+    } else if(lp>=1){ v=l_to; }
+    else if(lp<=0){ v=l_from; }
+    else { const p=clamp((lt-(k/order.length)*.7)/.3); v=l_to?flicker(p):1-flicker(p); }
+    c.style.opacity=lerp(.25,1,v);
+    c.style.transform=rise>=1?"":`translate3d(0,${40*(1-rise)}px,0)`;
+  });
+  lknob.style.transform=`translateX(${24*lerp(l_from,l_to,easeInOutSine(clamp(lp*3)))}px)`;
+  /* carousel: the card nearest the centre is full size, neighbours ease back */
+  if(carDirty){
+    carDirty=false;
+    if(touchLike.matches && !reduced){
+      const r=scroller.getBoundingClientRect();
+      if(r.bottom>0 && r.top<innerHeight){
+        const c=r.left+r.width/2;
+        ncards.forEach(k=>{
+          const b=k.getBoundingClientRect(), d=clamp(Math.abs(b.left+b.width/2-c)/r.width);
+          k.style.transform=`scale(${(1-d*.08).toFixed(4)})`; k.style.opacity=(1-d*.4).toFixed(3);
+        });
+      }
+    } else ncards.forEach(k=>{k.style.transform="";k.style.opacity="";});
+  }
+  /* timeline line draws down as you scroll through it */
+  {
+    const r=tline.getBoundingClientRect();
+    const tp=reduced?1:clamp((innerHeight*.65-r.top)/r.height);
+    if(Math.abs(tp-lastTl)>.001){ lastTl=tp; tline.style.setProperty("--tl",tp.toFixed(4)); }
+  }
+  /* scroll progress line under the nav */
+  const pr=clamp(sy/docMax);
+  if(Math.abs(pr-lastProg)>.0005){ lastProg=pr; prog.style.transform=`scaleX(${pr})`; }
+  requestAnimationFrame(frame);
+}
+setHeroTheme(0);
+requestAnimationFrame(frame);
 </script>
-
 </body>
-
 </html>
