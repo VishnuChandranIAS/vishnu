@@ -149,7 +149,7 @@ transformed.x+=(sin(uTime*${freq}+ph+hh*2.2)*.8+.35)*hh*hh*${amp};transformed.z+
 /* ================= procedural textures ================= */
 function canvasTex(w,h,draw,rep){const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);
   const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;if(rep)t.repeat.set(rep,rep);t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return t;}
-const sandTex=canvasTex(256,256,(x,w,h)=>{const id=x.createImageData(w,h);for(let i=0;i<w*h;i++){const v=205+Math.random()*50-(Math.random()<.06?70:0);
+const sandTex=canvasTex(256,256,(x,w,h)=>{const id=x.createImageData(w,h);for(let i=0;i<w*h;i++){const v=190+Math.random()*55-(Math.random()<.06?70:0);
   id.data[i*4]=v;id.data[i*4+1]=v*.97;id.data[i*4+2]=v*.9;id.data[i*4+3]=255;}x.putImageData(id,0,0);},140);
 const woodTex=canvasTex(512,512,(x)=>{
   for(let r=0;r<16;r++){const y=r*32;x.fillStyle=`hsl(${rr(20,30)},${rr(22,38)}%,${rr(24,36)}%)`;x.fillRect(0,y,512,32);
@@ -189,14 +189,14 @@ const slope=(x,z)=>Math.hypot(H(x+1,z)-H(x-1,z),H(x,z+1)-H(x,z-1))*.5;
   const n=g.attributes.normal,col=new Float32Array(p.count*3);
   for(let i=0;i<p.count;i++){
     const x=p.getX(i),y=p.getY(i),z=p.getZ(i),ny=n.getY(i),v=.82+.3*fbm(x*.02,z*.02,3);
-    let c=[.80*v,.71*v,.53*v];
+    let c=[.66*v,.6*v,.46*v];
     const rock=smooth(.95,.78,ny);c=c.map((q,k)=>lerp(q,[.33,.31,.29][k],rock));
     const alg=smooth(.55,.75,fbm(x*.008+40,z*.008,3))*smooth(-80,-45,y)*.6;c=c.map((q,k)=>lerp(q,[.36,.46,.27][k],alg));
     const deep=smooth(-70,-125,y);c=c.map((q,k)=>lerp(q,[.2,.24,.28][k],deep));
     col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];
   }
   g.setAttribute('color',new THREE.BufferAttribute(col,3));
-  scene.add(new THREE.Mesh(g,patch(new THREE.MeshStandardMaterial({vertexColors:true,map:sandTex,roughness:1,metalness:0}),{ff:CF(.65)})));
+  scene.add(new THREE.Mesh(g,patch(new THREE.MeshStandardMaterial({vertexColors:true,map:sandTex,roughness:1,metalness:0}),{ff:CF(.45)})));
 }
 
 /* instancing helper */
@@ -551,8 +551,8 @@ const pbMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms
 const pbGeo=new THREE.BufferGeometry();pbGeo.setAttribute('position',new THREE.BufferAttribute(pb.p,3));pbGeo.setAttribute('aSeed',new THREE.BufferAttribute(pb.s,4));
 {const p=new THREE.Points(pbGeo,pbMat);p.frustumCulled=false;scene.add(p);}
 function exhaleBubbles(){const f=new V3(0,0,-1).applyQuaternion(camera.quaternion),r=new V3(1,0,0).applyQuaternion(camera.quaternion);
-  for(let k=0;k<22;k++){const i=pb.i++%PB;const o=camera.position.clone().addScaledVector(f,rr(.5,1)).addScaledVector(r,rr(-.35,.35));o.y-=rr(.1,.4);
-    pb.p.set([o.x,o.y,o.z],i*3);pb.v.set([rr(-.2,.2),rr(1.4,2.6),rr(-.2,.2)],i*3);pb.s.set([rr(.03,.09),1,0,0],i*4);pb.life[i]=rr(3,6)+k*.03;}}
+  for(let k=0;k<14;k++){const i=pb.i++%PB;const o=camera.position.clone().addScaledVector(f,rr(.6,1.1)).addScaledVector(r,rr(-.5,.5));o.y-=rr(.5,.9);
+    pb.p.set([o.x,o.y,o.z],i*3);pb.v.set([rr(-.2,.2),rr(1.4,2.6),rr(-.2,.2)],i*3);pb.s.set([rr(.012,.035),1,0,0],i*4);pb.life[i]=rr(3,6)+k*.03;}}
 
 /* ================= player & input ================= */
 const P={pos:new V3(28,H(28,92)+14,92),vel:new V3(),yaw:.12,pitch:-.12};
